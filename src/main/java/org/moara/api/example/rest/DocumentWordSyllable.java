@@ -3,11 +3,7 @@ package org.moara.api.example.rest;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.moara.ara.datamining.textmining.api.document.DocumentStandardKey;
-import org.moara.common.network.socket.HostAddrPort;
 import org.moara.common.util.ExceptionUtil;
-import org.moara.engine.console.EngineConsole;
-import org.moara.open.api.ApiMessageCode;
-import org.moara.open.api.client.ApiRequests;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -28,12 +24,12 @@ import java.net.URL;
  * </pre>
  * @author Copyrights 2019 by ㈜모아라. All right reserved.
  */
-public class DocumentWords {
+public class DocumentWordSyllable {
 
     public static String call(String address, String jsonValue){
 
         try {
-            URL url = new URL(address + "/document/words");
+            URL url = new URL(address + "/document/word/syllable");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setUseCaches(false);
             conn.setRequestMethod("POST");
@@ -94,15 +90,6 @@ public class DocumentWords {
 
         System.out.println(receiveMessage);
 
-        JSONObject receiveObj = new JSONObject(receiveMessage);
 
-        //분석 원문 (위치 참조용)
-        System.out.println(receiveObj.getString(DocumentStandardKey.ANALYSIS_CONTENTS.key()));
-
-        JSONArray wordArray = receiveObj.getJSONArray(DocumentStandardKey.WORD_ARRAY.key());
-
-        for (int i = 0; i <wordArray.length() ; i++) {
-            System.out.println(wordArray.get(i).toString());
-        }
     }
 }

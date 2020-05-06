@@ -98,9 +98,9 @@ public class SimilarityCosine {
         messageObj.put("source" , source);
         messageObj.put("target" , target);
 
-        String receiveMessage = call("http://wigo.moara.org:3993", messageObj.toString());
-//        String receiveMessage = call("http://moara.org:33377", messageObj.toString());
-        System.out.println(messageObj.toString());
+//        String receiveMessage = call("http://wigo.moara.org:3993", messageObj.toString());
+        String receiveMessage = call("http://127.0.0.1:33377", messageObj.toString());
+//        System.out.println(messageObj.toString());
 
         //분석 원문 (위치 참조용)
         System.out.println(receiveMessage);
