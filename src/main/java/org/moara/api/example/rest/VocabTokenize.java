@@ -1,5 +1,8 @@
 package org.moara.api.example.rest;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 /**
  * <pre>
  *  파 일 명 : VocabTokenize.java
@@ -21,8 +24,14 @@ public class VocabTokenize {
     public static void main(String[] args) {
 
         String receiveMessage = RestCall.call("http://moara.org:9020/ml/vocab/tokenize", "1950년에 가입 했어 korea");
-
         System.out.println(receiveMessage);
+        JSONArray array = new JSONArray(receiveMessage);
+        for (int i = 0; i <array.length() ; i++) {
+            JSONObject obj = array.getJSONObject(i);
+            System.out.println(obj.getString("text"));
+        }
+
+
 
     }
 }
