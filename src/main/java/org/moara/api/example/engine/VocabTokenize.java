@@ -1,7 +1,10 @@
-package org.moara.api.example.rest;
+package org.moara.api.example.engine;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.moara.api.example.rest.RestCall;
+import org.moara.open.api.ApiMessageCode;
+import org.moara.open.api.client.ApiRequests;
 
 /**
  * <pre>
@@ -22,17 +25,17 @@ public class VocabTokenize {
 
 
     public static void main(String[] args) {
+        String result = ApiRequests.sendToReceiveMessage("192.168.0.61",10303,"org.moara.ara.datamining.textmining.api.word.engine","KoreaVocabWordsApi", "1950년에 korea 가입 했어");
 
-        JSONObject request = new JSONObject();
-        request.put("text", "1950년에 korea 가입 했어");
-        String receiveMessage = RestCall.call("http://moara.org:9020/ml/vocab/tokenize", request.toString());
-        System.out.println(receiveMessage);
-        JSONArray array = new JSONArray(receiveMessage);
+        if(result.startsWith(ApiMessageCode.FAIL)){
+            throw new RuntimeException(result);
+        }
+        System.out.println(result);
+        JSONArray array = new JSONArray(result);
         for (int i = 0; i <array.length() ; i++) {
             JSONObject obj = array.getJSONObject(i);
             System.out.println(obj.getString("text"));
         }
-
 
 
     }

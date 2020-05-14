@@ -3,11 +3,7 @@ package org.moara.api.example.rest;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.moara.ara.datamining.textmining.api.document.DocumentStandardKey;
-import org.moara.common.network.socket.HostAddrPort;
 import org.moara.common.util.ExceptionUtil;
-import org.moara.engine.console.EngineConsole;
-import org.moara.open.api.ApiMessageCode;
-import org.moara.open.api.client.ApiRequests;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

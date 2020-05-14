@@ -83,6 +83,7 @@ public class DocumentWordSimple {
         //언어유형 설정 default KO
 //       messageObj.put(DocumentStandardKey.LANG_CODE.key(), LangCode.KO);
 
+
         //본문
         messageObj.put(DocumentStandardKey.CONTENTS.key() , "지난 19대 총선 당시 한국당은 ‘이주노동자와 다문화 가정을 대변할 수 있는 인재를 영입하겠다’며 이 전 의원을 전격 영입했다. 이후 비례대표로 19대 국회에서 당 가정폭력대책분과 위원장 등을 맡으며 이주여성 보호 법안 등을 발의하는 등 활발히 활동했지만, 19대 국회 이후 당이 이 전 의원을 공천하지 않기로 하면서 당내에서 별다른 활동을 하지 못했다.");
 
