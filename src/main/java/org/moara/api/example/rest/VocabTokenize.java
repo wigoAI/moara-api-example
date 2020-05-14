@@ -23,7 +23,7 @@ public class VocabTokenize {
 
     public static void main(String[] args) {
 
-        String receiveMessage = RestCall.call("http://moara.org:9020/ml/vocab/tokenize", "1950년에 가입 했어 korea");
+        String receiveMessage = RestCall.call("http://moara.org:9020/ml/vocab/tokenize", "1950년에 korea 가입 했어");
         System.out.println(receiveMessage);
         JSONArray array = new JSONArray(receiveMessage);
         for (int i = 0; i <array.length() ; i++) {
