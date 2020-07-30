@@ -40,12 +40,12 @@ public class RestCall {
             conn.setConnectTimeout(30000);
             conn.setReadTimeout(30000);
             conn.setUseCaches(false);
-
-            OutputStream stream = conn.getOutputStream();
-            stream.write(value.getBytes());
-            stream.flush();
-            stream.close();
-
+            if(value != null && value.length() >0) {
+                OutputStream stream = conn.getOutputStream();
+                stream.write(value.getBytes());
+                stream.flush();
+                stream.close();
+            }
             String charSet = "UTF-8";
             StringBuilder message = new StringBuilder();
             BufferedReader br;

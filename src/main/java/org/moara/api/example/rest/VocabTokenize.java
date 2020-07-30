@@ -25,7 +25,8 @@ public class VocabTokenize {
 
         JSONObject request = new JSONObject();
         request.put("text", "1950년에 korea 가입 했어");
-        String receiveMessage = RestCall.call("http://moara.org:9020/ml/vocab/tokenize", request.toString());
+//        String receiveMessage = RestCall.call("http://moara.org:9020/ml/vocab/tokenize", request.toString());
+        String receiveMessage = RestCall.call("http://moara.org:9020/ml/vocab/tokenize", "");
         System.out.println(receiveMessage);
         JSONArray array = new JSONArray(receiveMessage);
         for (int i = 0; i <array.length() ; i++) {
