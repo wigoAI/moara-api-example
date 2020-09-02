@@ -1,3 +1,19 @@
+/*
+ * Copyright (C) 2020 Wigo Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package org.moara.api.example.engine;
 
 import org.json.JSONArray;
@@ -7,25 +23,14 @@ import org.moara.open.api.ApiMessageCode;
 import org.moara.open.api.client.ApiRequests;
 
 /**
- * <pre>
- *  파 일 명 : VocabTokenize.java
- *  설    명 : 보케블러리 예제관련 소스
- *
- *  작 성 자 : macle(김용수)
- *  작 성 일 : 2020.05
- *  버    전 : 1.0
- *  수정이력 :
- *  기타사항 :
- * </pre>
- *
- * @author Copyrights 2020 by ㈜ WIGO. All right reserved.
+ * Tokenize
+ * @author macle
  */
-
 public class VocabTokenize {
 
 
     public static void main(String[] args) {
-        String result = ApiRequests.sendToReceiveMessage("192.168.0.61",10303,"org.moara.ara.datamining.textmining.api.word.engine","KoreaVocabWordsApi", "1950년에 korea 가입 했어");
+        String result = ApiRequests.sendToReceiveMessage("hostAddress",10001,"org.moara.ara.datamining.textmining.api.word.engine","KoreaVocabWordsApi", "1950년에 korea 가입 했어");
 
         if(result.startsWith(ApiMessageCode.FAIL)){
             throw new RuntimeException(result);

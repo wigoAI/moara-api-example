@@ -1,6 +1,21 @@
+/*
+ * Copyright (C) 2020 Wigo Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package org.moara.api.example.rest;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.moara.ara.datamining.textmining.api.document.DocumentStandardKey;
 import org.moara.common.util.ExceptionUtil;
@@ -12,17 +27,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * <pre>
- *  파 일 명 : DocumentWords.java
- *  설    명 : 원문 단어정보
- *
- *  작 성 자 : macle(김용수)
- *  작 성 일 : 2019.11
- *  버    전 : 1.0
- *  수정이력 :
- *  기타사항 :
- * </pre>
- * @author Copyrights 2019 by ㈜모아라. All right reserved.
+ * 단어추출
+ * @author macle
  */
 public class DocumentWordSimple {
 
@@ -87,7 +93,7 @@ public class DocumentWordSimple {
         //본문
         messageObj.put(DocumentStandardKey.CONTENTS.key() , "지난 19대 총선 당시 한국당은 ‘이주노동자와 다문화 가정을 대변할 수 있는 인재를 영입하겠다’며 이 전 의원을 전격 영입했다. 이후 비례대표로 19대 국회에서 당 가정폭력대책분과 위원장 등을 맡으며 이주여성 보호 법안 등을 발의하는 등 활발히 활동했지만, 19대 국회 이후 당이 이 전 의원을 공천하지 않기로 하면서 당내에서 별다른 활동을 하지 못했다.");
 
-        String receiveMessage = call("http://moara.org:9020", messageObj.toString());
+        String receiveMessage = call("hostAddress", messageObj.toString());
 
         System.out.println(receiveMessage);
 

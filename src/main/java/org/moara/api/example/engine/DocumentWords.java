@@ -1,27 +1,30 @@
+/*
+ * Copyright (C) 2020 Wigo Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package org.moara.api.example.engine;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.moara.ara.datamining.textmining.api.document.DocumentStandardKey;
-import org.moara.ara.datamining.textmining.document.Document;
-import org.moara.common.code.LangCode;
-import org.moara.common.network.socket.HostAddrPort;
-import org.moara.engine.console.EngineConsole;
 import org.moara.open.api.ApiMessageCode;
 import org.moara.open.api.client.ApiRequests;
 
 /**
- * <pre>
- *  파 일 명 : DocumentWords.java
- *  설    명 : 원문 단어정보
- *
- *  작 성 자 : macle(김용수)
- *  작 성 일 : 2019.11
- *  버    전 : 1.0
- *  수정이력 :
- *  기타사항 :
- * </pre>
- * @author Copyrights 2019 by ㈜모아라. All right reserved.
+ * 단어추출
+ * @author macle
  */
 public class DocumentWords {
 
@@ -55,7 +58,7 @@ public class DocumentWords {
 
 //        String responseMessage = call(hostAddrPort.getHostAddress(), hostAddrPort.getPort(), messageObj.toString());
 
-        String responseMessage = call("wigo.moara.org", 3992, messageObj.toString());
+        String responseMessage = call("hostAddress", 3992, messageObj.toString());
 
         JSONObject receiveObj = new JSONObject(responseMessage);
 
